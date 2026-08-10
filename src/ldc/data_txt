@@ -1,0 +1,27 @@
+OUTPUT_FOLDER = "UPDATE_ME/Videoannotation/Data/Video annotation/Annotated videos"
+MODEL_PATH = "UPDATE_ME/Videoannotation/Software/ModelTraining/Model5/best_model_epoch_29.pth"
+URL = 'https://lcsosrv1.epfl.ch/api/v1/reactions.json?collection_id=398&page=1&per_page=100'
+URL_REACTION = 'https://lcsosrv1.epfl.ch/api/v1/reactions/'
+URL_SENSORS = 'http://localhost:4444/'
+COOKIES = {
+    '_ga': 'GA1.1.1589167455.1753110854',
+    'petitpois': 'dismiss',
+    '_ga_MWT7D7P44V': 'GS2.1.s1767799705$o1$g0$t1767799705$j60$l0$h0',
+    '_ga_N6BF9H5G73': 'GS2.1.s1767799704$o3$g1$t1767799729$j35$l0$h0',
+    '_ga_J13VYC944L': 'GS2.1.s1767799704$o1$g1$t1767799729$j35$l0$h0',
+    '_chemotion_session': '4oXUUXecokmlOHEcOHQePZS3D1Lnd%2FtaAtLEsLPm1d5ZEtjebE1x3DNzU22oFHJG5digHfWu2Bpa5IKGqjLX%2FLXDnDdW917wYulbCJ8ZHH9wte5JKyqVSQD9B85I44ogFbCSTJo0LP9NcMjwVsYtAmyRrezuEdfbHMWG%2F7sfVWw9OsMa2F6R3JVXTAfhvd3L%2FTg7potKuYeFsEi%2BLy%2FSuVHNEyvaMog3VaRhjn6Ul9ha85gGcnhs1Eefg354cI1dhfVpZ76vlpyhP3BKf2T0WsTZdfwyYTfk%2BPgNy6CbQn5C78mj1U%2FcP8qaYpRxeMlscYt3D2vYrjyfoJmajxaxb%2FUD6OV4qls5WRIGehKv1ApnchrsCSwG%2FaM0ql6DfDPpGTQOPRva0Mtp9VkH0uk%3D--IEKY17tvP36C3Oi%2B--ZpaKr5FeyKkKL9y2GlgmPw%3D%3D',
+}
+HEADERS = {
+    'Accept': '*/*',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Connection': 'keep-alive',
+    'If-None-Match': 'W/"cf43e8b70a8b27e4b1cc6f96d102c925"',
+    'Referer': 'https://lcsosrv1.epfl.ch/mydb/collection/all',
+    'Sec-Fetch-Dest': 'empty',
+    'Sec-Fetch-Mode': 'cors',
+    'Sec-Fetch-Site': 'same-origin',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36',
+    'sec-ch-ua': '"Chromium";v="148", "Google Chrome";v="148", "Not/A)Brand";v="99"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"'
+}
