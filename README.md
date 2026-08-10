@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # In Situ Recognition of Laboratory Actions
 
@@ -8,6 +9,18 @@ This repository contains the software used in the article: ....
 The reliable transfer of experimental knowledge is central to chemical discovery, yet much of the procedural information generated in wet laboratories is still captured as incomplete, unstructured, and manually written records. This limits reproducibility, obscures tacit experimental knowledge, and prevents routine laboratory practice from being reused by computational and autonomous chemistry workflows. Here, we introduce a hands-free framework for self-documenting chemical experiments, in which laboratory actions are captured during execution and converted into structured, machine-readable data. The system integrates dual video streams directly within a standard laboratory fume hood with electronic laboratory notebook (ELN)–based action annotation, enabling continuous, time-synchronized acquisition of labeled video data under realistic working conditions. Using this platform, we collected approximately 7,000 labeled video fragments covering common wet-laboratory operations and used them to fine-tune a pretrained computer vision model for action recognition. The model achieved up to 84% accuracy across five action classes and retained practical performance during prospective deployment, correctly identifying experimental operations in approximately 70% of cases. More broadly, this work establishes a practical route toward AI-compatible experimental records, where human laboratory practice can be captured, structured, and reused as data for reproducible and data-driven chemical research. 
 
 <img width="549" height="341" alt="Picture1" src="https://github.com/user-attachments/assets/9215f309-bb43-4842-ba81-651cdb29dd83" />
+=======
+# In Situ Recognition of Laboratory Actions
+
+This repository contains the software used in the article: ....
+
+## Abstract
+
+The reliable transfer of experimental knowledge is central to chemical discovery, yet much of the procedural information generated in wet laboratories is still captured as incomplete, unstructured, and manually written records. This limits reproducibility, obscures tacit experimental knowledge, and prevents routine laboratory practice from being reused by computational and autonomous chemistry workflows. Here, we introduce a hands-free framework for self-documenting chemical experiments, in which laboratory actions are captured during execution and converted into structured, machine-readable data. The system integrates dual video streams directly within a standard laboratory fume hood with electronic laboratory notebook (ELN)–based action annotation, enabling continuous, time-synchronized acquisition of labeled video data under realistic working conditions. Using this platform, we collected approximately 7,000 labeled video fragments covering common wet-laboratory operations and used them to fine-tune a pretrained computer vision model for action recognition. The model achieved up to 84% accuracy across five action classes and retained practical performance during prospective deployment, correctly identifying experimental operations in approximately 70% of cases. More broadly, this work establishes a practical route toward AI-compatible experimental records, where human laboratory practice can be captured, structured, and reused as data for reproducible and data-driven chemical research. 
+
+<img width="549" height="341" alt="image" src="https://github.com/user-attachments/assets/502eb49e-0be3-4086-bd21-868219803432" />
+
+>>>>>>> cf08762 (Open-sourcing code for paper (#1))
 
 ## Hardware material
 
