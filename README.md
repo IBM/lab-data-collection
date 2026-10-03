@@ -1,17 +1,17 @@
-
 # In Situ Recognition of Laboratory Actions
 
 This repository contains the software used in the article: ....
 
 ## Abstract
 
-The reliable transfer of experimental knowledge is central to chemical discovery, yet much of the procedural information generated in wet laboratories is still captured as incomplete, unstructured, and manually written records. This limits reproducibility, obscures tacit experimental knowledge, and prevents routine laboratory practice from being reused by computational and autonomous chemistry workflows. Here, we introduce a hands-free framework for self-documenting chemical experiments, in which laboratory actions are captured during execution and converted into structured, machine-readable data. The system integrates dual video streams directly within a standard laboratory fume hood with electronic laboratory notebook (ELN)–based action annotation, enabling continuous, time-synchronized acquisition of labeled video data under realistic working conditions. Using this platform, we collected approximately 7,000 labeled video fragments covering common wet-laboratory operations and used them to fine-tune a pretrained computer vision model for action recognition. The model achieved up to 84% accuracy across five action classes and retained practical performance during prospective deployment, correctly identifying experimental operations in approximately 70% of cases. More broadly, this work establishes a practical route toward AI-compatible experimental records, where human laboratory practice can be captured, structured, and reused as data for reproducible and data-driven chemical research. 
+The reliable transfer of experimental knowledge is central to chemical discovery, yet much of the procedural information generated in wet laboratories is still captured as incomplete, unstructured, and manually written records. This limits reproducibility, obscures tacit experimental knowledge, and prevents routine laboratory practice from being reused by computational and autonomous chemistry workflows. Here, we introduce a hands-free framework for self-documenting chemical experiments, in which laboratory actions are captured during execution and converted into structured, machine-readable data. The system integrates dual video streams directly within a standard laboratory fume hood with electronic laboratory notebook (ELN)–based action annotation, enabling continuous, time-synchronized acquisition of labeled video data under realistic working conditions. Using this platform, we collected approximately 6,500 labeled video fragments covering common wet-laboratory operations and used them to fine-tune a pretrained computer vision model for action recognition. The model achieved up to 84% accuracy across five action classes and retained practical performance during prospective deployment, correctly identifying experimental operations in approximately 70% of cases. More broadly, this work establishes a practical route toward AI-compatible experimental records, where human laboratory practice can be captured, structured, and reused as data for reproducible and data-driven chemical research.
 
 <img width="549" height="341" alt="Picture1" src="https://github.com/user-attachments/assets/9215f309-bb43-4842-ba81-651cdb29dd83" />
 
 ## Hardware material
 
 List of the materials used and map of the setup.
+
 <ul>
 <li>Yocto-Meteo-V2
 <li>Svpro 4K Webcam
@@ -33,26 +33,27 @@ List of the materials used and map of the setup.
 </ul>
 
 <p align="center">
-    <img src="assets/FumeHoodScheme.png" width="800"/>
+    <img src="assets\Digital_FumeHood.png" width="800"/>
 </p>
 
 ## Data acquisition softwares
 
-The following work provides a coombination of software tools designed and employed for both acquisition of data and direct predictions in prospective analysis. The tools were developed on top of the ELN Chemotion, it is composed of two softwares that work synchronously: *VideoManager* and *ELNScribe*. 
+The following work provides a combination of software tools designed and employed for both acquisition of data and direct predictions in prospective analysis. The tools were developed on top of the ELN Chemotion, it is composed of two softwares that work synchronously: *VideoManager* and *ELNScribe*. The `chemotion_api` integration requires Chemotion ELN version 2.0.0 or higher.
 
 #### VideoManager
 
-The *VideoManager* tool manages the recording of the cameras placed in the fume-hood and takes care of creating the labels for the videos dataset. At the first use, a windows allows the introduction of requires credentials to access the ELN and the sensor API, select the destination folders and the model for the predictions. The Chemoton.json address and the cookies of the ELN can be obtained from any browser. 
+The *VideoManager* tool manages the recording of the cameras placed in the fume-hood and takes care of creating the labels for the videos dataset. At the first use, a windows allows the introduction of requires credentials to access the ELN and the sensor API, select the destination folders and the model for the predictions. The Chemoton.json address and the cookies of the ELN can be obtained from any browser.
 
 <p align="center">
     <img src="assets/SetupPage.png" height="600"/>
 </p>
 
 Given the high number of cameras employed in the project, when the software its initialized, a window allows the selection of the right cameras.
+
 <p align="center">
     <img src="assets/CameraSelection.png" height="600"/>
 </p>
-The recording is active only when the light of the fume-hood is on, and starts only if movement is detected. The video stops after 20 seconds of inactivity or upon deactivation of the light. The buttons placed on top allow to switch view between the two cameras, ensuring complete framing of the action. The recordings report the number of the relative camera and the time for reliable association with the notes. 
+The recording is active only when the light of the fume-hood is on, and starts only if movement is detected. The video stops after 20 seconds of inactivity or upon deactivation of the light. The buttons placed on top allow to switch view between the two cameras, ensuring complete framing of the action. The recordings report the number of the relative camera and the time for reliable association with the notes.
 
 <p align="center">
     <img src="assets/VideoManager.png" height="400"/>
@@ -64,6 +65,7 @@ In background, the system checks when a reaction's status is changed to `Success
 #### ELNScribe
 
 The *ELNScribe* software is an extension of the ELN Chemotion, giving access to it and allowing to write in the reaction's description the executed action with a couple of clicks. Thanks to it, the chemist is able to interact with the ELN without leaving the fume-hood. Once more, at first use, a popup will allow the introduction of the user credentials of the ELN.
+
 <p align="center">
     <img src="assets/UserLogin.png" height="300"/>
 </p>
@@ -98,7 +100,7 @@ In the central part of the interface, 4 different buttons are found:
     </p>
     This allows the user to position the ROI on the flask of the relative reaction with the gray box in the middle of the reaction solution. Once the ROI is well positioned, the confirm button can be pressed. When a reaction is labelled as Running, the ROI becomes red and shape and position cannot be modified. Additionally, a `Calibration` button is present, which upon activation shows a third window pops up displaying the normal camera and the thermic camera side by side, allowing the user to allign the 2 cameras.
     <p align="center">
-        <img src="assets/Capture d'écran 2025-02-25 173003.png" height="400"/>
+        <img src="assets\Capture d'écran 2025-02-25 173003.png" height="400"/>
     </p>
 </ul>
 In the lower part of the interface, a series of radiobuttons can be found with a canva containing a graph underneath. When a reaction is started, the software monitors data from the Yocto-Meteo-V2, collecting the actual room temperature, atmospheric pressure and humidity percentage in the fume-hood. Those values are collected every 30 seconds and stored in a csv file, from there, the software plots and shows the collected data, updating them at every acquisition. Moreover, if a reaction is `Running` at room temperature, the software upload the value of the temperature detected by the Yocto-Meteo-V2 in the ELN. 
@@ -115,19 +117,21 @@ It is important to highlight that this last program can be used alone, represent
 
 ## Dataset
 
-The dataset collected with the system and employed in the training of the models are provided as `.mp4` files with a `label.json` file containing the labels per filename. The videos are named as `Cam1` or `Cam2` depending on the camera source, followed by the date of acquisition. The dataset used in the retrospective analysis had to be chuncked in 4 second long videos, and therefore contain chunck number in the name. For the retrospective analysis dataset and the future acquired data the system provides already videos of the lenght of 4 seconds and the contigous videos are considered with the same label. 
+The dataset collected with the system and employed in the training of the models are provided as `.mp4` files with a `label.json` file containing the labels per filename. The videos are named as `Cam1` or `Cam2` depending on the camera source, followed by the date of acquisition. The dataset used in the retrospective analysis had to be chuncked in 4 second long videos, and therefore contain chunck number in the name. For the retrospective analysis dataset and the future acquired data the system provides already videos of the lenght of 4 seconds and the contigous videos are considered with the same label.
 
 ## Development setup & installation
-To install the package run:
 
+Requires Python 3.12 or later. From the repository root, install the project and its locked runtime dependencies with:
 
 ```console
 pip install uv
+uv sync --locked
+```
 
-uv init .
-uv venv
-source .venv/bin/activate
-uv pip install -e .
+To install development tools, including pytest, Ruff, and mypy, use:
+
+```console
+uv sync --locked --extra dev
 ```
 
 ## Training
@@ -192,6 +196,3 @@ Logs are stored in `eval_info__.log`.
 - Keep label encoding consistent between training and evaluation
 - GPU is strongly recommended for faster training
 - Training automatically supports CPU, CUDA, and Apple MPS (if available)
-
-
-

@@ -1,4 +1,4 @@
-import os
+import os, re
 import json, csv
 from itertools import zip_longest
 
@@ -85,8 +85,8 @@ data_analysis = {}
 # Iterate through items in the specified folder
 for item in os.listdir(folder):
     full_path = os.path.join(folder, item)
-    # check if it's a folder and starts with '202' (2025, to avoid eventually other, obsolete folders)
-    if os.path.isdir(full_path) and item[0:3] == '202':  
+    # keep only date-named folders (YYYY-MM-DD), skipping obsolete/auxiliary folders
+    if os.path.isdir(full_path) and re.match(r'^\d{4}-', item):
         print("Folder:", item)
         if os.path.isdir(full_path):
             # Count .mp4 files in the folder
