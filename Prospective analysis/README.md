@@ -1,10 +1,10 @@
 ## Prospective analysis results
 
-The results of the prospective analysis are contained in the CSV file. Video names are reported in the `filename_video` column, and the corresponding JSON file containing the predictions for each video is reported in the `source_file` column.
+The CSV file contains the prospective analysis results. The `filename_video` column lists each video name, and `source_file` gives the corresponding JSON filename containing predictions for that video.
 
-The `source_file_per_video` column repeats the JSON filename for every video. Predictions for each video are reported in `predicted_class_per_video`, while true values for each video are reported in `true_class_per_video`. Finally, the prediction per label is reported in `predicted_class`, and the true label is reported in `true_class`. The `Count_per_video` and `count_per_prediction` columns report 1 if the prediction is correct and 0 if it is incorrect; all evaluation metrics are derived from these two columns.
+The `source_file_per_video` column repeats the JSON filename for each video. Predictions and true values for each video are listed in `predicted_class_per_video` and `true_class_per_video`, respectively. Predictions and true labels are listed in `predicted_class` and `true_class`, respectively. The `Count_per_video` and `count_per_prediction` columns contain 1 when a prediction is correct and 0 otherwise. All evaluation metrics are derived from these columns.
 
-Given the limited amount of data, the results were also double-checked manually.
+Because the dataset is limited, the results were also checked manually.
 
-See the Supporting Information for further details.
+See the Supporting Information for further details. The `uv.lock` file pins the complete transitive dependency graph.
 
